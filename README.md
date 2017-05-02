@@ -1,19 +1,14 @@
 # Prettify JSON
 
-[TODO. There will be project description]
+This program prettifyes json text for convenient reading.
 
 # Quickstart
 
-[TODO]
+Before using program  be sure to put txt file with json in the same folder of the same directory as the directory of the script.
+This file should exist to run program properly.
+To run write in console:
+python pprint_json.py
 
-Example of script launch on Linux, Python 3.5:
-
-```#!bash
-
-$ python pprint_json.py <path to file>
-# TODO add output example
-
-```
 
 # Project Goals
 
