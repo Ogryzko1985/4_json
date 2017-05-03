@@ -3,14 +3,14 @@ import os.path
 def find_path():
     directory=os.path.abspath(__file__)  
     find_path.file_directory = directory[:-14]+'text.txt'
-    print(find_path.file_directory)
+    #print(find_path.file_directory)
     return find_path.file_directory
 def load_data(filepath):
-    data = open(filepath, 'r')
-    load_data.read_file = data.read()  
+    data_to_load = open(filepath, 'r')
+    load_data.read_file = data_to_load.read()  
     return load_data.read_file
-def pretty_print_json(data):
-    pretty_print_json.decode_file = json.loads(data)
+def pretty_print_json(data_to_prettify):
+    pretty_print_json.decode_file = json.loads(data_to_prettify)
     print(json.dumps(pretty_print_json.decode_file,sort_keys=True,indent = 4,ensure_ascii=False))
     
 
