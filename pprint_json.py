@@ -1,20 +1,31 @@
 import json
 import os.path
+json_file = 'text.txt'
+current_file_name = __file__
+
+
 def find_path():
-    directory=os.path.abspath(__file__)  
-    find_path.file_directory = directory[:-14]+'text.txt'
-    #print(find_path.file_directory)
-    return find_path.file_directory
+    dir = os.path.abspath(current_file_name)
+    dir1 = os.path.split(dir)
+    file_dir = dir1[0] + r'\\'[:-1]+json_file
+    return file_dir
+
+
 def load_data(filepath):
-    data_to_load = open(filepath, 'r')
-    load_data.read_file = data_to_load.read()  
-    return load_data.read_file
-def pretty_print_json(data_to_prettify):
-    pretty_print_json.decode_file = json.loads(data_to_prettify)
-    print(json.dumps(pretty_print_json.decode_file,sort_keys=True,indent = 4,ensure_ascii=False))
-    
+    with open(filepath, 'r') as load_data_read:
+        data_loaded = load_data_read.read()
+    return data_loaded
+
+
+def pretty_print_json(data):
+    pretty_print_json.decode_ = json.loads(data)
+    pretty_print_text = json.dumps(pretty_print_json.decode_,
+                                   sort_keys=True, indent=4,
+                                   ensure_ascii=False)
+    print(pretty_print_text)
+
 
 if __name__ == '__main__':
-    find_path()
-    load_data(find_path.file_directory)
-    pretty_print_json(load_data.read_file)
+    path_finding = find_path()
+    data_loading = load_data(path_finding)
+    pretty_printing = pretty_print_json(data_loading)
