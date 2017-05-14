@@ -3,11 +3,10 @@
 This program prettifyes json text for convenient reading.
 
 # Quickstart
-
-Before using program  be sure to put txt file with json in the same folder of the same directory as the directory of the script.
-This file should exist to run program properly.
+In console print after "python pprint_json.py" full path to file with json.
+Example:
 To run write in console:
-python pprint_json.py
+python pprint_json.py "C:\Text.txt"
 
 
 # Project Goals
