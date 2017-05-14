@@ -1,31 +1,28 @@
 import json
 import os.path
-json_file = 'text.txt'
-current_file_name = __file__
+import sys
 
 
 def find_path():
-    dir = os.path.abspath(current_file_name)
-    dir1 = os.path.split(dir)
-    file_dir = dir1[0] + r'\\'[:-1]+json_file
-    return file_dir
+    input_json_directory = sys.argv[1]
+    return input_json_directory
 
 
-def load_data(filepath):
-    with open(filepath, 'r') as load_data_read:
-        data_loaded = load_data_read.read()
-    return data_loaded
+def load_json(json_filepath):
+    with open(json_filepath, 'r') as json_open:
+        json_read = json_open.read()
+    return json_read
 
 
-def pretty_print_json(data):
-    pretty_print_json.decode_ = json.loads(data)
-    pretty_print_text = json.dumps(pretty_print_json.decode_,
-                                   sort_keys=True, indent=4,
-                                   ensure_ascii=False)
-    print(pretty_print_text)
+def prettify_json(json_data):
+    prettify_json.decode_ = json.loads(json_data)
+    prettify_json_text = json.dumps(prettify_json.decode_,
+                                    sort_keys=True, indent=4,
+                                    ensure_ascii=False)
+    print(prettify_json_text)
 
 
 if __name__ == '__main__':
-    path_finding = find_path()
-    data_loading = load_data(path_finding)
-    pretty_printing = pretty_print_json(data_loading)
+    path_find = find_path()
+    load_data = load_json(path_find)
+    prettify_text = prettify_json(load_data)
